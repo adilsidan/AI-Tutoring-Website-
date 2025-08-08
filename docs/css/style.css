@@ -1,108 +1,112 @@
-/* basic page setup */
+/* Base styles, you know, for everything */
 body {
-    background-color: #f0f2f5;
-    font-family: sans-serif;
+    font-family: 'Mukta', sans-serif; /* Trying a slightly different, friendlier font */
+    background-color: #fafaef; /* Like a light sandy color, man */
     margin: 0;
-    
-    /* center the app */
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    align-items: center;
+    min-height: 100vh; /* Make sure it fills the screen */
 }
 
+/* The main box where our chat happens */
 .tutor-container {
-    height: 85vh; /* a bit more room */
+    background-color: #e0f2f7; /* A nice light teal, like the backwaters maybe? */
     width: 90%;
-    max-width: 600px;
-    
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
+    max-width: 550px; /* Let's make it a tad narrower */
+    height: 80vh;
+    border-radius: 10px; /* A bit more rounded, soft edges */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* To keep the rounded corners nice */
 }
 
+/* The header part */
 h1 {
-    padding: 20px;
-    margin: 0;
     text-align: center;
-    border-bottom: 1px solid #dddfe2;
-    color: #1c1e21;
+    color: #263238; /* A dark, earthy grey */
+    padding: 15px; /* A little less padding */
+    margin: 0;
+    border-bottom: 1px solid #b0bec5; /* Soft border */
 }
 
-/* this is where the chat bubbles go */
+/* Where all the chat messages will appear */
 .chat-window {
-    padding: 20px;
-    flex-grow: 1; /* makes it take up available space */
-    overflow-y: auto;
+    flex-grow: 1; /* Take up all the space that's left */
+    padding: 15px; /* A bit less padding here too */
+    overflow-y: auto; /* If it gets too long, let's scroll */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
 }
 
-/* styling for the chat bubbles */
+/* Each individual message bubble style */
 .message {
-    padding: 10px 15px;
-    border-radius: 18px;
-    max-width: 75%;
-    line-height: 1.4;
-    margin-bottom: 12px;
+    padding: 10px 12px; /* A little tighter padding */
+    border-radius: 20px; /* More rounded bubbles */
+    max-width: 80%; /* Give it a little more width */
+    line-height: 1.3;
 }
 
 .message strong {
-    font-size: 0.8em;
     display: block;
-    color: #65676b;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
+    font-size: 0.9em; /* Slightly bigger sender name */
+    color: #546e7a; /* A medium grey for the name */
 }
 
-/* user's message */
+/* The user's messages - let's make them blue-ish */
 .message:nth-child(odd) {
-    background-color: #0084ff; /* TODO: maybe a different blue? */
-    color: white;
-    align-self: flex-end;
+    background-color: #bbdefb; /* A nice light blue */
+    color: #1a237e; /* A darker blue for the text */
+    align-self: flex-end; /* On the right side */
 }
 .message:nth-child(odd) strong {
-    color: #eee;
+    color: #3f51b5; /* A more prominent blue for the user's name */
 }
 
-/* ai's message */
+/* The AI's messages - let's go with light grey */
 .message:nth-child(even) {
-    background-color: #e4e6eb;
-    color: #050505;
-    align-self: flex-start;
+    background-color: #cfd8dc; /* A soft grey */
+    color: #37474f; /* A darker grey for the AI text */
+    align-self: flex-start; /* On the left side */
 }
 
-
-/* the bottom input bar */
+/* The input area at the bottom */
 .input-area {
     display: flex;
     padding: 10px;
-    border-top: 1px solid #dddfe2;
+    border-top: 1px solid #b0bec5; /* Another soft border */
 }
 
 #user-input {
     flex-grow: 1;
+    border: 1px solid #90a4ae; /* A medium grey border for the input */
+    border-radius: 25px; /* More rounded input box */
     padding: 10px 15px;
     font-size: 1em;
-    border: 1px solid #ccd0d5;
-    border-radius: 18px;
-    outline: none; /* no ugly glow */
+    outline: none; /* No weird blue outline on focus */
 }
 
-#send-btn {
-    border: none;
-    border-radius: 50%; /* this needs to be a circle */
-    width: 40px;
-    height: 40px;
-    
-    background-color: #0084ff;
-    color: white;
-    cursor: pointer; /* show hand on hover */
-    margin-left: 10px;
-    font-size: 1.5em;
-    
-    transition: background-color 0.2s;
+#user-input:focus {
+    border-color: #4caf50; /* A friendly green when focused */
 }
+
+/* The send button - let's make it a bright color */
+#send-btn {
+    background-color: #4caf50; /* A nice green */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Still a circle */
+    width: 45px; /* A little bigger */
+    height: 45px; /* A little bigger */
+    margin-left: 10px;
+    font-size: 1.2em; /* Slightly smaller icon size */
+    cursor: pointer; /* Show it's clickable */
+    transition: background-color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
 #send-btn:hover {
-    background-color: #006edc;
+    background-color: #388e3c; /* Darker green on hover */
 }

@@ -16,8 +16,7 @@ Making learning more accessible and effective with a 24/7 AI-powered personal tu
 
 -   **Frontend:** HTML, CSS, JavaScript
 -   **Backend:** Python (Flask/FastAPI)
--   **AI:** Gemini API / OpenAI GPT-4 API (or specify your choice)
--   **Deployment:** GitHub Pages / Replit / Vercel (you can fill this in later)
+-   **AI:** Gemini API
 
 ## 📁 Folder Structure
 

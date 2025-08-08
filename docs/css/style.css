@@ -64,7 +64,7 @@ p {
 /* User messages */
 .message:nth-child(odd) {
   background-color: #16a085; /* teal for user messages */
-  color: #ecf0f1; /* light text */
+  color: #ffffff; /* light text */
   align-self: flex-end;
 }
 

@@ -1,6 +1,6 @@
 # AI Tutor Website 🤖
 
-A brief, one-sentence description of your project. For example: *An interactive, AI-powered tutoring website designed to provide personalized learning experiences in mathematics.*
+Making learning more accessible and effective with a 24/7 AI-powered personal tutor, ready to help with any question you ask
 
 ---
 

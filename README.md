@@ -1,4 +1,4 @@
-![banner](designs/banner.png)
+![banner](assets/banner.png)
 # AI Tutor Website 🤖
 
 Making learning more accessible and effective with a 24/7 AI-powered personal tutor, ready to help with any question you ask

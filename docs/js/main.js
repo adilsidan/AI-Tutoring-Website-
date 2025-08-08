@@ -1,59 +1,69 @@
-// Get references to the HTML elements we'll need to interact with
-const sendBtn = document.getElementById('send-btn');
-const userInput = document.getElementById('user-input');
-const chatWindow = document.querySelector('.chat-window');
+// Wait for the entire HTML document to load before running the script
+document.addEventListener('DOMContentLoaded', () => {
 
-// Function to add a user's message to the chat window
-function displayUserMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = 'message user-message';
-    messageElement.textContent = message;
-    chatWindow.appendChild(messageElement);
-    chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
-}
+    // Get references to the HTML elements we'll need to interact with
+    const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const chatWindow = document.querySelector('.chat-window');
+    
+    // This is the URL of your Python backend. 
+    // We will update the placeholder in the next step.
+    const backendUrl = 'https://psychic-space-invention-7x9wwwrwrjxhr74p-5000.app.github.dev//api/ask'; 
 
-// Function to add the AI's message to the chat window
-function displayAiMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = 'message ai-message';
-    messageElement.textContent = message;
-    chatWindow.appendChild(messageElement);
-    chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom
-}
+    // --- Function to send the message ---
+    const sendMessage = async () => {
+        const question = userInput.value.trim();
+        if (question === '') {
+            return; // Don't send empty messages
+        }
 
-// This is the main function that runs when the send button is clicked
-function handleSendMessage() {
-    const message = userInput.value.trim();
+        // Display the user's question in the chat window
+        appendMessage('You', question);
+        userInput.value = ''; // Clear the input box
 
-    // If the input isn't empty, proceed
-    if (message) {
-        // 1. Display the user's message
-        displayUserMessage(message);
+        try {
+            // Send the question to the backend using the fetch API
+            const response = await fetch(backendUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ question: question }),
+            });
 
-        // 2. Clear the input box
-        userInput.value = '';
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
 
-        // 3. Simulate an AI response (we will replace this later)
-        setTimeout(() => {
-            displayAiMessage('Thinking...');
-            // In the future, we'll call the real AI here.
-            // For now, let's just pretend with another timeout.
-            setTimeout(() => {
-                // Remove the "Thinking..." message if you want
-                const thinkingMsg = document.querySelector('.ai-message:last-child');
-                thinkingMsg.textContent = 'This is a placeholder response from the frontend. The backend is next!';
-            }, 1500);
-        }, 500);
-    }
-}
+            const data = await response.json();
+            const aiAnswer = data.answer;
 
-// Tell the browser to listen for clicks on the send button
-sendBtn.addEventListener('click', handleSendMessage);
+            // Display the AI's answer
+            appendMessage('AI Tutor', aiAnswer);
 
-// Also allow pressing 'Enter' to send the message
-userInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        handleSendMessage();
-    }
+        } catch (error) {
+            console.error('Error:', error);
+            appendMessage('AI Tutor', 'Sorry, something went wrong. Please check the backend server.');
+        }
+    };
+
+    // --- Function to add a message to the chat window ---
+    const appendMessage = (sender, message) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+        chatWindow.appendChild(messageElement);
+        chatWindow.scrollTop = chatWindow.scrollHeight; // Auto-scroll to the bottom
+    };
+
+    // --- Event Listeners ---
+    // Listen for a click on the send button
+    sendBtn.addEventListener('click', sendMessage);
+
+    // Listen for the "Enter" key press in the input box
+    userInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
 });
-

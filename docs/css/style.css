@@ -69,7 +69,7 @@ p {
 }
 
 .message:nth-child(odd) strong {
-  color: #1abc9c; /* brighter teal for name */
+  color: #ffffff; /* brighter teal for name */
 }
 
 /* AI messages */

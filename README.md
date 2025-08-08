@@ -75,7 +75,7 @@ Instructions on how to set up and run the project locally.
     ```
 
 5.  **Launch the Frontend:**
-    Open the `index.html` file in the `frontend` folder in your browser.
+    Open the `index.html` file in the `docs` folder in your browser.
 
 ## 🤝 Contributing
 

@@ -5,12 +5,6 @@ Making learning more accessible and effective with a 24/7 AI-powered personal tu
 
 ---
 
-## ✨ Features
-
--   **Personalized Learning Paths:** The AI adapts to the student's level and provides questions accordingly.
--   **Instant Feedback:** Get immediate corrections and explanations for your answers.
--   **Socratic Dialogue:** The tutor asks guiding questions to help students discover the answers themselves.
--   **24/7 Availability:** Learn anytime, anywhere.
 
 ## 🛠️ Tech Stack
 

@@ -53,7 +53,7 @@ Instructions on how to set up and run the project locally.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/your-username/ai-tutor-website.git](https://github.com/your-username/ai-tutor-website.git)
+    git clone [https://github.com/adilsidan/ai-tutor-website.git](https://github.com/your-username/ai-tutor-website.git)
     cd ai-tutor-website
     ```
 

@@ -1,1 +1,81 @@
+/* General body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* The main container for our tutor app */
+.tutor-container {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #1c1e21;
+}
+
+p {
+    text-align: center;
+    color: #606770;
+    margin-bottom: 24px;
+}
+
+/* The window where messages will appear */
+.chat-window {
+    background-color: #f0f2f5;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    height: 300px;
+    padding: 12px;
+    margin-bottom: 16px;
+    overflow-y: auto; /* Adds a scrollbar if content overflows */
+}
+
+/* Container for the input and button */
+.input-area {
+    display: flex;
+    gap: 8px;
+}
+
+/* The text input box */
+#user-input {
+    flex-grow: 1; /* Allows the input to take up available space */
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: #1877f2;
+}
+
+/* The send button */
+#send-btn {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#send-btn:hover {
+    background-color: #166fe5;
+}
 

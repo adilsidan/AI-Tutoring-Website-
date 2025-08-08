@@ -31,7 +31,7 @@ ai-tutor-website/
 │   ├── ai_logic.py
 │   └── requirements.txt
 │
-└── frontend/
+└── docs/
     ├── index.html
     ├── css/
     │   └── style.css

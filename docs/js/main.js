@@ -1,3 +1,4 @@
+alert('JS Loaded!');
 document.addEventListener('DOMContentLoaded', () => {
 
   const sendBtn = document.getElementById('send-btn');

@@ -44,7 +44,7 @@ p {
   gap: 10px;
 }
 
-.message {
+message {
   padding: 12px 16px; 
   border-radius: 25px; 
   max-width: 80%;
@@ -108,7 +108,7 @@ p {
   transition: border-color 0.3s ease;
 }
 
-#send-btn {
+send-btn {
   background-color: #4caf50;
   color: white;
   border: none;

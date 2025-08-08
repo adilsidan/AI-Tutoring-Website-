@@ -1,81 +1,108 @@
-/* General body styling */
+/* basic page setup */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: sans-serif;
     margin: 0;
+    
+    /* center the app */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-/* The main container for our tutor app */
 .tutor-container {
-    background-color: #ffffff;
+    height: 85vh; /* a bit more room */
     width: 90%;
     max-width: 600px;
+    
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
+    padding: 20px;
+    margin: 0;
     text-align: center;
+    border-bottom: 1px solid #dddfe2;
     color: #1c1e21;
 }
 
-p {
-    text-align: center;
-    color: #606770;
-    margin-bottom: 24px;
-}
-
-/* The window where messages will appear */
+/* this is where the chat bubbles go */
 .chat-window {
-    background-color: #f0f2f5;
-    border: 1px solid #dddfe2;
-    border-radius: 6px;
-    height: 300px;
-    padding: 12px;
-    margin-bottom: 16px;
-    overflow-y: auto; /* Adds a scrollbar if content overflows */
+    padding: 20px;
+    flex-grow: 1; /* makes it take up available space */
+    overflow-y: auto;
 }
 
-/* Container for the input and button */
+/* styling for the chat bubbles */
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 75%;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.message strong {
+    font-size: 0.8em;
+    display: block;
+    color: #65676b;
+    margin-bottom: 4px;
+}
+
+/* user's message */
+.message:nth-child(odd) {
+    background-color: #0084ff; /* TODO: maybe a different blue? */
+    color: white;
+    align-self: flex-end;
+}
+.message:nth-child(odd) strong {
+    color: #eee;
+}
+
+/* ai's message */
+.message:nth-child(even) {
+    background-color: #e4e6eb;
+    color: #050505;
+    align-self: flex-start;
+}
+
+
+/* the bottom input bar */
 .input-area {
     display: flex;
-    gap: 8px;
+    padding: 10px;
+    border-top: 1px solid #dddfe2;
 }
 
-/* The text input box */
 #user-input {
-    flex-grow: 1; /* Allows the input to take up available space */
-    border: 1px solid #dddfe2;
-    border-radius: 6px;
-    padding: 12px;
-    font-size: 16px;
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid #ccd0d5;
+    border-radius: 18px;
+    outline: none; /* no ugly glow */
 }
 
-#user-input:focus {
-    outline: none;
-    border-color: #1877f2;
-}
-
-/* The send button */
 #send-btn {
-    background-color: #1877f2;
-    color: white;
     border: none;
-    border-radius: 6px;
-    padding: 0 24px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+    border-radius: 50%; /* this needs to be a circle */
+    width: 40px;
+    height: 40px;
+    
+    background-color: #0084ff;
+    color: white;
+    cursor: pointer; /* show hand on hover */
+    margin-left: 10px;
+    font-size: 1.5em;
+    
     transition: background-color 0.2s;
 }
-
 #send-btn:hover {
-    background-color: #166fe5;
+    background-color: #006edc;
 }
-

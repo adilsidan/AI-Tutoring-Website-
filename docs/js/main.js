@@ -1,32 +1,9 @@
-alert('JS Loaded!');
 document.addEventListener('DOMContentLoaded', () => {
-
   const sendBtn = document.getElementById('send-btn');
   const userInput = document.getElementById('user-input');
   const chatWindow = document.querySelector('.chat-window');
-  const toggleBtn = document.getElementById('dark-mode-toggle');
-  const body = document.body;
 
   const backendUrl = 'https://psychic-space-invention-7x9wwwrwrjxhr74p-5000.app.github.dev/api/ask';
-
-  // Load saved dark mode preference
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    body.classList.add('dark-mode');
-    toggleBtn.textContent = '☀️';
-  }
-
-  // Dark mode toggle handler
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('darkMode', 'enabled');
-      toggleBtn.textContent = '☀️';
-    } else {
-      localStorage.setItem('darkMode', 'disabled');
-      toggleBtn.textContent = '🌙';
-    }
-  });
 
   const sendMessage = async () => {
     const question = userInput.value.trim();
@@ -71,5 +48,4 @@ document.addEventListener('DOMContentLoaded', () => {
   userInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
   });
-
 });

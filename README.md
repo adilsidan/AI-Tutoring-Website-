@@ -5,19 +5,12 @@ Making learning more accessible and effective with a 24/7 AI-powered personal tu
 
 ---
 
-## ✨ Features
-
--   **Personalized Learning Paths:** The AI adapts to the student's level and provides questions accordingly.
--   **Instant Feedback:** Get immediate corrections and explanations for your answers.
--   **Socratic Dialogue:** The tutor asks guiding questions to help students discover the answers themselves.
--   **24/7 Availability:** Learn anytime, anywhere.
 
 ## 🛠️ Tech Stack
 
 -   **Frontend:** HTML, CSS, JavaScript
 -   **Backend:** Python (Flask/FastAPI)
--   **AI:** Gemini API / OpenAI GPT-4 API (or specify your choice)
--   **Deployment:** GitHub Pages / Replit / Vercel (you can fill this in later)
+-   **AI:** Gemini API
 
 ## 📁 Folder Structure
 
@@ -32,7 +25,7 @@ ai-tutor-website/
 │   ├── ai_logic.py
 │   └── requirements.txt
 │
-└── frontend/
+└── docs/
     ├── index.html
     ├── css/
     │   └── style.css
@@ -54,7 +47,7 @@ Instructions on how to set up and run the project locally.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/your-username/ai-tutor-website.git](https://github.com/your-username/ai-tutor-website.git)
+    git clone [https://github.com/adilsidan/ai-tutor-website.git](https://github.com/your-username/ai-tutor-website.git)
     cd ai-tutor-website
     ```
 
@@ -76,7 +69,7 @@ Instructions on how to set up and run the project locally.
     ```
 
 5.  **Launch the Frontend:**
-    Open the `index.html` file in the `frontend` folder in your browser.
+    Open the `index.html` file in the `docs` folder in your browser.
 
 ## 🤝 Contributing
 

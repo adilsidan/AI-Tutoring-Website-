@@ -1,42 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Tutor</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type your question here...">
+            <button id="send-btn" title="Send">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24">
+                    <path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
 
-  <div class="tutor-container" role="main" aria-label="AI Tutor Chat">
-    <h1>AI Tutor</h1>
-    <p>Ask me any question!</p>
-
-    <div class="chat-window" aria-live="polite" aria-relevant="additions"></div>
-
-    <div class="input-area">
-      <input
-        type="text"
-        id="user-input"
-        placeholder="Type your question here..."
-        aria-label="Type your question here"
-        autocomplete="off"
-        autofocus
-      />
-      <button id="send-btn" aria-label="Send">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    height="24"
-    viewBox="0 0 24 24"
-    width="24"
-    fill="white"
-  >
-    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-  </svg>
-</button>
-   </div>
-  </div>
-
-  <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
-</html></html></html>
+</html>

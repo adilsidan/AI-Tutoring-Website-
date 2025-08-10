@@ -3,8 +3,8 @@
 /* Base styles */
 body {
   font-family: 'Mukta', sans-serif;
-  background: #2c3e50; /* dark slate background */
-  color: #ecf0f1; /* light text */
+  background: #2c3e50; /*  background */
+  color: #ecf0f1; 
   margin: 0;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@ body {
 }
 
 .tutor-container {
-  background-color: #3b4a61; /* lighter dark container */
+  background-color: #3b4a61; /* container */
   width: 90%;
   max-width: 550px;
   height: 80vh;
@@ -27,16 +27,16 @@ body {
 h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: #f5f7fa; /* near white heading */
+  color: #f5f7fa; 
   padding: 20px 15px;
   margin: 0;
-  border-bottom: 2px solid #1abc9c; /* teal border */
+  border-bottom: 2px solid #1abc9c; 
 }
 
 p {
   text-align: center;
   margin: 10px 0;
-  color: #d0d6db; /* lighter paragraph */
+  color: #d0d6db; /* paragraph */
 }
 
 .chat-window {
@@ -63,26 +63,26 @@ p {
 
 /* User messages */
 .message:nth-child(odd) {
-  background-color: #16a085; /* teal for user messages */
-  color: #ecf0f1; /* light text */
+  background-color: #16a085; 
+  color: #ecf0f1; 
   align-self: flex-end;
 }
 
 .message:nth-child(odd) strong {
-  color: #ffffff; /* brighter teal for name */
+  color: #ffffff; 
 }
 
 /* AI messages */
 .message:nth-child(even) {
-  background-color: #34495e; /* dark slate for AI messages */
-  color: #bdc3c7; /* soft gray text */
+  background-color: #34495e; 
+  color: #bdc3c7; 
   align-self: flex-start;
 }
 
 .input-area {
   display: flex;
   padding: 10px;
-  border-top: 1px solid #1abc9c; /* teal border */
+  border-top: 1px solid #1abc9c; 
 }
 
 #user-input {
@@ -98,7 +98,7 @@ p {
 }
 
 #user-input::placeholder {
-  color: #7f8c8d; /* placeholder color */
+  color: #7f8c8d; 
 }
 
 #user-input:focus {

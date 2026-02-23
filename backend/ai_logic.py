@@ -1,11 +1,15 @@
-import google.generativeai as genai
+from groq import Groq
 import os
 
 def get_ai_response(question):
-    genai.configure(api_key=os.environ.get("AI_API_KEY"))
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    client = Groq(api_key=os.environ.get("AI_API_KEY"))
     
-    prompt = f"You are a helpful AI tutor. Answer this question clearly and simply: {question}"
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {"role": "system", "content": "You are a helpful AI tutor. Answer questions clearly and simply."},
+            {"role": "user", "content": question}
+        ],
+        model="llama-3.3-70b-versatile",
+    )
     
-    response = model.generate_content(prompt)
-    return response.text
+    return chat_completion.choices[0].message.content

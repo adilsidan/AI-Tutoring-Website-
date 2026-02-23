@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const userInput = document.getElementById('user-input');
   const chatWindow = document.querySelector('.chat-window');
 
-  const backendUrl = 'https://psychic-space-invention-7x9wwwrwrjxhr74p-5000.app.github.dev/api/ask';
+  const backendUrl = 'https://ai-tutor-backend-4btu.onrender.com/api/ask';
 
   const sendMessage = async () => {
     const question = userInput.value.trim();

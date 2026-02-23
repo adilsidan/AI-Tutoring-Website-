@@ -63,9 +63,10 @@ body::before {
 
 /* ── Header ── */
 .header {
-  padding: 20px 24px;
+  padding: 16px 20px;
   border-bottom: 1px solid var(--border);
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
@@ -178,10 +179,11 @@ body::before {
   transition: all 0.2s;
   font-family: 'Mukta', sans-serif;
   font-weight: 500;
+  outline: none;
 }
 
 .chip:hover {
-  background: var(--accent-glow);
+  background: rgba(26, 188, 156, 0.15);
   border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-1px);
@@ -229,17 +231,17 @@ body::before {
 }
 
 .message.user .bubble {
-  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-  color: var(--user-text);
+  background: var(--surface-2);
+  color: var(--ai-text);
+  border: 1px solid var(--border);
   border-bottom-right-radius: 4px;
-  box-shadow: 0 4px 14px var(--accent-glow);
 }
 
 .message.ai .bubble {
-  background: var(--ai-bubble);
-  color: var(--ai-text);
-  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #ffffff;
   border-bottom-left-radius: 4px;
+  box-shadow: 0 4px 14px var(--accent-glow);
 }
 
 .message.ai .bubble:hover {

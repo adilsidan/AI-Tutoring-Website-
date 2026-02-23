@@ -6,19 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const backendUrl = 'https://ai-tutor-backend-4btu.onrender.com/api/ask';
 
-  // Suggestion chip clicks
-  document.querySelectorAll('.chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      userInput.value = chip.textContent;
-      userInput.focus();
-      sendMessage();
-    });
-  });
-
   const hideEmptyState = () => {
-    if (emptyState) {
-      emptyState.style.display = 'none';
-    }
+    if (emptyState) emptyState.style.display = 'none';
   };
 
   const appendMessage = (sender, text) => {
@@ -96,6 +85,15 @@ document.addEventListener('DOMContentLoaded', () => {
       userInput.focus();
     }
   };
+
+  // Suggestion chip clicks — defined after sendMessage so it's in scope
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      e.preventDefault();
+      userInput.value = chip.textContent.trim();
+      sendMessage();
+    });
+  });
 
   sendBtn.addEventListener('click', sendMessage);
   userInput.addEventListener('keypress', (e) => {

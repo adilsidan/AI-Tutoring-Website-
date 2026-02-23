@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const backendUrl = 'https://ai-tutor-backend-4btu.onrender.com/api/ask';
 
+  const renderMarkdown = (text) => {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/^\s*[-•]\s+(.+)/gm, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+      .replace(/\n{2,}/g, '</p><p>')
+      .replace(/\n/g, '<br>');
+  };
+
   const hideEmptyState = () => {
     if (emptyState) emptyState.style.display = 'none';
   };
@@ -21,7 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const bubble = document.createElement('div');
     bubble.classList.add('bubble');
-    bubble.textContent = text;
+
+    if (sender === 'You') {
+      bubble.textContent = text;
+    } else {
+      bubble.innerHTML = renderMarkdown(text);
+    }
 
     msg.appendChild(label);
     msg.appendChild(bubble);
@@ -86,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Suggestion chip clicks — defined after sendMessage so it's in scope
   document.querySelectorAll('.chip').forEach(chip => {
     chip.addEventListener('click', (e) => {
       e.preventDefault();
